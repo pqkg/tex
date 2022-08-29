@@ -1,0 +1,162 @@
+\documentclass[a4paper,11pt]{article}
+
+% \usepackage{multirow,booktabs}
+% \usepackage{fullpage}
+% \usepackage{setspace}
+% \usepackage{calc}
+% \usepackage{multicol}
+% \usepackage{hyperref}
+% \usepackage{framed}
+% \usepackage[most]{tcolorbox}
+% \usepackage{xcolor}
+% \usepackage{siunitx}
+% \usepackage{textcomp, gensymb}
+% \definecolor{ivory}{HTML}{FFFFF0}
+% \pagecolor{ivory}
+% \colorlet{shadecolor}{orange!10}
+% \colorlet{shadecolor}{orange!7}
+% \usepackage{fancyhdr}
+% \usepackage{cases}
+
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{enumitem}
+\usepackage{mathrsfs}
+\usepackage{wrapfig}
+\usepackage{cancel}
+\usepackage{empheq}
+\usepackage{bm}
+
+\usepackage[style=alphabetic, sorting=ynt]{biblatex}
+\addbibresource{references.bib}
+
+\usepackage{parskip}
+\usepackage[total={7in, 10in}]{geometry}
+% \parskip 5pt
+
+
+
+
+
+
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\theoremstyle{remark}
+\newtheorem*{notes}{Note}
+\newtheorem*{example}{Example}
+
+\renewcommand{\bf}[1]{\textbf{#1}}
+\renewcommand{\it}[1]{\textit{#1}}
+\newcommand{\algn}[1]{\begin{align*} #1 \end{align*}}
+\newcommand{\splt}[1]{\begin{split} #1 \end{split}}
+\newcommand{\fc}[2]{\frac{#1}{#2}}
+\newcommand{\eq}[1]{\begin{equation*} #1 \end{equation*}}
+\newcommand{\eqn}[2]{\begin{equation} \label{#1} #2 \end{equation}}
+\newcommand{\noi}{\noindent}
+\newcommand{\tx}[1]{\text{#1}}
+\newcommand{\Dt}{\,\Delta}
+\newcommand{\br}[1]{\langle #1 \rangle}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\fa}[1]{\forall #1\,}
+\newcommand{\ex}[1]{\exists #1\,}
+\newcommand{\nex}[1]{\nexists #1\,}
+\newcommand{\exu}[1]{\exists! #1\,}
+\newcommand{\an}{\:\land\:}
+\newcommand{\lr}{\:\lor\:}
+\newcommand{\ev}{\;\;\Leftrightarrow\;\;}
+\newcommand{\ip}{\,\;\Rightarrow\;\,}
+\newcommand{\im}{\item}
+\newcommand{\al}{\alpha}
+\newcommand{\om}{\omega}
+\newcommand{\ta}{\theta}
+\newcommand{\bc}{\bigcup}
+\newcommand{\un}{\,\cup\,}
+\newcommand{\bca}{\bicap}
+\newcommand{\ins}{\,\cap\,}
+\newcommand{\sse}{\subseteq}
+\newcommand{\ssp}{\subset}
+\newcommand{\abs}[1]{\vert #1 \vert}
+\newcommand{\np}{\par}
+\newcommand{\il}[4]{\displaystyle\int_{#1}^{#2} #3 \, d#4}
+\newcommand{\dv}[2]{\fc{d#1}{d#2}}
+\newcommand{\pdv}[2]{\fc{\partial#1}{\partial#2}}
+\newcommand{\vb}[1]{\mathbf{#1}}
+\newcommand{\tss}[1]{\textsuperscript{#1}}
+\newcommand{\subs}[1]{\subsection{#1}}
+\newcommand{\subss}[1]{\subsubsection{#1}}
+\newcommand{\dgr}{\degree}
+\newcommand{\cel}[1]{\SI{#1}{\celsius}}
+\newcommand{\kel}[1]{\SI{#1}{\kelvin}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\iy}{\infty}
+
+
+\newcommand{\hl}[3]{\begin{shaded}\noi\bf{#1}\\\eq{#2}#3\end{shaded}}
+\newcommand{\hlt}[2]{\begin{shaded}\noi\bf{#1}\\#2\end{shaded}}
+\newcommand{\wher}[1]{where \algn{#1}}
+
+\newcommand{\dfn}[1]{\begin{definition}\begin{shaded}#1\end{shaded}\end{definition}}
+\newcommand{\thm}[1]{\begin{theorem}\begin{shaded}#1\end{shaded}\end{theorem}}
+\newcommand{\cor}[1]{\begin{corollary}#1\end{corollary}}
+\newcommand{\lem}[1]{\begin{lemma}#1\end{lemma}}
+
+\newcommand{\defn}[2]{\begin{definition}\label{#2}\begin{shaded}#1\end{shaded}\end{definition}}
+\newcommand{\thn}[2]{\begin{theorem}\label{#2}\begin{shaded}#1\end{shaded}\end{theorem}}
+\newcommand{\corn}[2]{\begin{corollary}\label{#2}#1\end{corollary}}
+\newcommand{\len}[2]{\begin{lemma}\label{#2}#1\end{lemma}}
+
+\newcommand{\prf}[1]{\begin{proof}#1\end{proof}}
+\newcommand{\exa}[1]{\begin{example}#1\end{example}}
+\newcommand{\note}[1]{\begin{notes}#1\end{notes}}
+
+\newcommand{\enum}[1]{\begin{enumerate}[label=\roman*.]#1\end{enumerate}}
+\newcommand{\desci}[1]{\begin{description}[labelindent=0.5cm]#1\end{description}}
+\newcommand{\desc}[1]{\begin{descriptiion}#1\end{description}}
+\newcommand{\descn}[1]{\begin{description}[labelindent=0.5cm,font=\normalfont]#1\end{description}}
+\newcommand{\rlimp}[2]{\begin{description}[labelindent=0.5cm,font=\normalfont] \im[(\,$\Rightarrow$\,)] #1 \im[(\,$\Leftarrow$\,)] #2 \end{description}}
+
+
+
+
+
+
+
+\title{Construction of the Real Number System,\\in the subject of Mathematics}
+\author{Bernhard Riemann, university of Göttingen\thanks{supervised by Carl Friedrich Gauss.}}
+\date{2022}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+
+% \begin{center}
+%     \bf{Introduction}
+% \end{center}
+% \noi When I first began thinking
+
+\tableofcontents
+\newpage
+
+
+
+
+
+\section{Section}
+
+\newpage
+\printbibliography[type=book,title={Literature},heading=bibintoc]
+\printbibliography[type=online,title={Internet},heading=bibintoc]
+
+
+\end{document}
